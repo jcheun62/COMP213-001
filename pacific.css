@@ -61,6 +61,14 @@ footer{
     text-align:left;
 }
 
+.block{
+    display:block;
+}
+
+.required{
+    color:#b12929;
+}
+
 #contact {
     font-size:90%;
 }
