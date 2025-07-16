@@ -155,3 +155,73 @@ input, textarea {
     background-repeat:no-repeat;
     background-position: center;
 }
+
+#mobile{
+    display:none;
+}
+
+/* Tablet View */
+@media only screen and (max-width:1024px) {
+    body{
+        margin:0px;
+        background-color:#FFFFFF;
+    }
+    #wrapper{
+        width:auto;
+        box-shadow:none;
+        border:none;
+    }
+    header{
+        padding: 0.5em 0em;
+        height:auto;
+    }
+    h1{
+        letter-spacing:0.1em;
+    }
+    nav, main{
+        display:block;
+        width:100%;
+    }
+    nav > ul{
+        display:flex;
+        justify-content: space-evenly;
+    }
+
+    #homehero, #yurthero, #trailhero {
+        height:200px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    main{
+        padding:0.1em 1em;
+        font-size:90%;
+    }
+    h1{
+        font-size:32px;
+    }
+
+    nav > ul {
+        display:block;
+    }
+
+    nav li {
+        border-bottom:2px solid #330000;
+    }
+
+    nav a {
+        display:block;
+    }
+
+    #homehero, #yurthero, #trailhero{
+        display:none;
+    }
+
+    #mobile{
+        display:inline;
+    }
+
+    #desktop{
+        display:none;
+    }
+}
