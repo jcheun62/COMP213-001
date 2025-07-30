@@ -18,17 +18,11 @@ header{
     padding-top:30px;
 }
 
-nav,main{
-    display:inline-block;
-    vertical-align: top;
-}
-
 nav{
     background-color:#FFFFFF;
     font-weight:bold;
     text-align:center;
     padding:10px;
-    width:30%;
     font-size:120%;
 }
 
@@ -37,6 +31,12 @@ nav ul {
     list-style-image:none;
     margin:0px;
     padding-left:0px;
+    display:flex;
+    justify-content: space-around;
+}
+
+nav ul a {
+    transition: color 3s ease-out;
 }
 
 nav ul a:link {
@@ -50,7 +50,6 @@ nav ul a:visited{
 nav ul a:hover{
     color:#A52A2A;
 }
-
 
 h1, h2, h3 {
     font-family:Georgia, 'Times New Roman', Times, serif
@@ -92,8 +91,12 @@ tr:nth-of-type(odd) {
 
 main{
     padding:1px 20px 20px;
-    width:70%;
     background-color:#FFFFFF;
+}
+
+video{ 
+    float:right;
+    padding:20px;
 }
 
 footer {
@@ -160,6 +163,31 @@ input, textarea {
     display:none;
 }
 
+#grid{
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+    "thumbnails lightbox";
+    width:fit-content;
+    margin:auto;
+    justify-items:center;
+    align-items:center;
+    height:400px;
+}
+
+#thumbnails {
+    grid-area:thumbnails;
+    display:flex;
+    flex-direction: column;
+    height:400px;
+    justify-content: space-around;
+}
+
+#lightbox {
+    grid-area:lightbox;
+    padding:20px;
+}
+
 /* Tablet View */
 @media only screen and (max-width:1024px) {
     body{
@@ -192,6 +220,7 @@ input, textarea {
     }
 }
 
+/*Smartphone View */
 @media only screen and (max-width:600px) {
     main{
         padding:0.1em 1em;
@@ -213,6 +242,13 @@ input, textarea {
         display:block;
     }
 
+    video{
+        float:none;
+        padding:0px;
+        display:block;
+        margin:auto;
+    }
+
     #homehero, #yurthero, #trailhero{
         display:none;
     }
@@ -223,5 +259,18 @@ input, textarea {
 
     #desktop{
         display:none;
+    }
+
+    #grid{
+        grid-template-columns:auto;
+        grid-template-areas:
+        "thumbnails"
+        "lightbox";
+        height:auto;
+    }
+
+    #thumbnails{
+        flex-direction:row;
+        height:auto;
     }
 }
